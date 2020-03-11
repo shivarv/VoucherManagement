@@ -1,0 +1,36 @@
+<apex:page standardController="Credit_Memo__c" extensions="downloadPdfController" renderAs="pdf"  showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false"    >
+    <apex:stylesheet value="{!URLFOR($Resource.vouchercss)}"/>
+
+ 	<html>
+        
+    <head>
+        <style>
+            @page {
+                margin: 5rem;
+            	
+            }
+        </style>
+    </head>
+    <body>
+   <div class="containerDiv">
+       	<img src="{!imageUrl}" alt="Snow" class="imgCustom"></img>
+        <div class="contentDiv">
+            <p  class="headerText">{!$Label.travel_text}</p> <span class="marginSpan">$ </span> <span class="sizeSpan"> {!credit.Amount__c}</span>         
+             <p  class="offerP">{!$Label.exclusively_for}<b>{!credit.Account__r.name} </b></p>
+            <ul class="contentUl">
+                 <apex:repeat value="{!notes}" var="note">
+                <li >
+                  <span class="leftSpan">{!note}</span>  
+                </li>
+            </apex:repeat>
+                
+            </ul>
+          
+        </div>
+        <div class="footerDiv"> {!$Label.voucher_no_text}
+ {!credit.name} <span class="footerSpan"> {!$Setup.Setting__c.logoText__c}</span></div>
+	</div>
+	</body>
+
+    </html>
+</apex:page>

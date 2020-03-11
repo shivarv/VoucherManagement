@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>exclusively_for</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>exclusively for</shortDescription>
+        <value>Exclusively For</value>
+    </labels>
+    <labels>
+        <fullName>travel_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>travel text</shortDescription>
+        <value>Travel Gift Certificate</value>
+    </labels>
+    <labels>
+        <fullName>voucher_no_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>voucher no text</shortDescription>
+        <value>Voucher no :</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,31 @@
+<aura:component implements="lightning:actionOverride" controller="NewMemoController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+ 
+     <div class="demo-only"  style="height: 100%;">
+            <section  class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-modal__close" title="X" 
+                                onclick="{!c.closeMe}">
+                            <lightning:icon class="white slds-icon_small" iconName="utility:close"/> 
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                       
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" > 
+                        <lightning:recordForm
+							objectApiName="Credit_Memo__c"
+							layoutType="Full"
+       					 	mode="edit" 
+                         	oncancel="{!c.closeMe}"
+                            onsave="{!c.closeMe}"
+                         />
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+	
+
+</aura:component>

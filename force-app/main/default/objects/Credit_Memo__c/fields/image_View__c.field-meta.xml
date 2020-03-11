@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>image_View__c</fullName>
+    <description>image preview</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(imageIdHardCoded__c) ,  IMAGE( $Setup.Setting__c.imageHardCodeUrl__c+  $Setup.Setting__c.imageIdHardCoded__c, &quot;default image&quot;, 200, 200) ,  IMAGE($Setup.Setting__c.imageHardCodeUrl__c+ imageIdHardCoded__c, &quot;image not found&quot;, 200, 200) )</formula>
+    <label>image View</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,3 @@
+<aura:component implements="force:lightningQuickAction" >
+    <a href="https://shivachallenge-dev-ed--c.visualforce.com/apex/downloadPdf?" target="_blank"></a>
+</aura:component>

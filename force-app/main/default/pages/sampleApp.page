@@ -1,0 +1,24 @@
+<apex:page standardController="Credit_Memo__c" >
+    
+    <script>
+    function isLightningExperienceOrSalesforce1() {
+    	return((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+	}
+    var previousOnload = window.onload; window.onload = function() { 
+        if (previousOnload) { 
+            previousOnload();
+        } 
+        onloadHandler(); 
+    }
+    function onloadHandler() {
+     	var recordId='{!$CurrentPage.Parameters.id}';
+        if(isLightningExperienceOrSalesforce1()) {
+            window.open('https://shivachallenge-dev-ed--c.visualforce.com/apex/downloadPdf?id='+recordId,'_blank');
+     		window.location.href = 'https://shivachallenge-dev-ed.lightning.force.com/lightning/r/Credit_Memo__c/'+recordId+'/view';	
+        } else {
+       		window.open('https://shivachallenge-dev-ed--c.visualforce.com/apex/downloadPdf?id='+recordId,'_blank');
+    	}
+   }
+   
+    </script>
+</apex:page>
