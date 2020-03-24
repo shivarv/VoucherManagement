@@ -19,7 +19,7 @@
 							layoutType="Full"
        					 	mode="edit" 
                          	oncancel="{!c.closeMe}"
-                            onsave="{!c.closeMe}"
+                            onsuccess="{!c.redirectUser}"
                          />
                     </div>
                 </div>

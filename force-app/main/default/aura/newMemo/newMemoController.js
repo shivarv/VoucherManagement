@@ -8,5 +8,14 @@
 		console.log('in closeMe ');
         component.destroy();
 
+	},
+    
+    redirectUser : function(component, event, helper) {
+    	var navEvent = $A.get("e.force:navigateToSObject");
+         navEvent.setParams({
+              recordId: event.getParam("id"),
+              slideDevName: "detail"
+         });
+         navEvent.fire(); 
 	}
 })

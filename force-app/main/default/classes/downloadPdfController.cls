@@ -1,5 +1,4 @@
 public class downloadPdfController {
-    Id memoId;
     public String imageUrl{get;set;}
     public Credit_Memo__c credit{get;set;}
     public List<String> notes {get;set;}
@@ -12,7 +11,11 @@ public class downloadPdfController {
     }
     
     private void setDatas() {
-        Id recordId =  Apexpages.currentPage().getParameters().get('id') != null ? Apexpages.currentPage().getParameters().get('id') : 'a002w000003FRgj';
+       // Id recordId =  Apexpages.currentPage().getParameters().get('id') != null ? Apexpages.currentPage().getParameters().get('id') : 'a002w000003FRgj';
+        Id recordId =  Apexpages.currentPage().getParameters().get('id');
+        if(recordId == null || String.isBlank(recordId)) {
+            return;
+        }
         List<Credit_Memo__c> creditRecordList = [select id, Account__r.name,name, Credit_Expiry_Date__c,
                                        Credit_Memo_Date__c, Exchange_Rate__c,note__c, Amount__c, imageName__c from Credit_Memo__c where id = :recordId limit 1]; 
         if(creditRecordList.isEmpty()) {
